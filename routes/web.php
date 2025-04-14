@@ -14,3 +14,4 @@ use App\Http\Controllers\LoginController;
 Route::get('/staff-login', [LoginController::class, 'showLoginForm'])->name('staff-login');
 Route::post('/staff-login', [LoginController::class, 'processLogin']);
 Route::get('/staff-dashboard', [LoginController::class, 'dashboard'])->name('staff-dashboard');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');

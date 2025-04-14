@@ -10,8 +10,7 @@
 <body>
 
     <div class="login-container">
-        <h2>Login</h2>
-        <img src="{{ asset('images/PN-logo.png') }}" alt="PN Logo">  <!-- Corrected the image path -->
+        <img src="{{ asset('images/NEWLOGOPN.png') }}" alt="Logo" class="logo">  
 
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -24,16 +23,17 @@
         <form action="{{ url('/staff-login') }}" method="POST">
             @csrf
             <div class="input-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <label for="id">Faculty ID / Student ID</label>
+                <input type="text" id="id" name="id" placeholder="Enter your email" style="border-radius: 5px" required>
             </div>
             
             <div class="input-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" style="border-radius: 5px"required>
             </div>
 
             <button type="submit" class="btn btn-primary">Login</button>
+            <a href="">Forgot password?</a>
         </form>
     </div>
 

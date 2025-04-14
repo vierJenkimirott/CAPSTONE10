@@ -9,23 +9,23 @@ body {
 
 .login-container {
     position: relative;
-    background: #FFFFFF;
-    padding: 75px 30px 30px;
+    background: #ffffff;
+    padding: 50px 30px 30px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 350px;
+    width: 500px;
+    outline: #0073B1 solid 1px;
 }
 
 img {
-    width: 125px;
-    height: 125px;
-    position: absolute;
-    top: -60px; 
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 50%;
-    border: 4px solid white;
+    width: 200px; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto 20px; 
+    border-radius: 10px; 
+    object-fit: contain; 
+    color: black
 }
 
 h2 {
@@ -36,6 +36,7 @@ h2 {
 .input-group {
     margin-bottom: 15px;
     text-align: left;
+    overflow: visible;
 }
 
 .input-group label {
@@ -49,7 +50,6 @@ h2 {
     width: 100%;
     padding: 10px;
     border: 1px solid #D1D5DB;
-    border-radius: 5px;
     outline: none;
     transition: border 0.3s ease;
 }
@@ -59,7 +59,22 @@ h2 {
 }
 
 button {
-    width: 85%;
+    width: 100%;
     padding: 10px;
     font-size: 16px;
+}
+
+a {
+    display: block;
+    text-align: left;
+    text-decoration: none;
+    color: #0073B1;
+    margin-top: 10px;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
 }
