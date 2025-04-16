@@ -15,3 +15,8 @@ Route::get('/staff-login', [LoginController::class, 'showLoginForm'])->name('sta
 Route::post('/staff-login', [LoginController::class, 'processLogin']);
 Route::get('/staff-dashboard', [LoginController::class, 'dashboard'])->name('staff-dashboard');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/student-manual', function () {
+    return view('student-manual'); // or your correct view path
+})->name('student.manual');
+
+
