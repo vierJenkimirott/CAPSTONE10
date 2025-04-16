@@ -3,14 +3,17 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 
+// <<<<<<< new/violation-features
+// =======
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+// // Route::get('/', function () {
+// //     return view('welcome');
+// // });
 
-// Route::get('/', function (){
-//     return view('staff');
-// }); 
+// // Route::get('/', function (){
+// //     return view('staff');
+// // }); 
+// >>>>>>> main
 
 Route::get('/staff-login', [LoginController::class, 'showLoginForm'])->name('staff-login');
 Route::post('/staff-login', [LoginController::class, 'processLogin']);
