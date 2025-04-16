@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 
+
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -15,3 +16,9 @@ Route::get('/staff-login', [LoginController::class, 'showLoginForm'])->name('sta
 Route::post('/staff-login', [LoginController::class, 'processLogin']);
 Route::get('/staff-dashboard', [LoginController::class, 'dashboard'])->name('staff-dashboard');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('/behavior', function () {
+    return view('behavior');
+});
+Route::post('/behavior', [behaviorController::class, 'behavior'])->name('behavior');
+
