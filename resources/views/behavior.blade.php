@@ -1,63 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Design</title>
-    <link rel="stylesheet" href="{{ asset('css/style.blade.css') }}">
-    <script src="https://kit.fontawesome.com/yourkitcode.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    
-    <div class="top-navbar">
-        <div class="logo">
-            LOGO
-        </div>
-    </div>
+@extends('layouts.staff-main')
 
-    <div class="navbar">
-        <br><br>
-        <nav>
-            <ul>
-                <li><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                <li><a href="#"><i class="fas fa-exclamation-triangle"></i> Violations</a></li>
-                <li><a href="#" class="active"><i class="fas fa-chart-line"></i> Behavior Monitoring</a></li>
-                <li><a href="#"><i class="fas fa-gift"></i> Rewards</a></li>
-            </ul>
-        </nav>
-    </div>
+@section('behavior')
 
-    <div class="main-content">
-        <div class="tiles">
-            <div class="tile">
-                <p>Total Students</p>
-                <h2>120</h2>
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/behavior.css') }}">
+@endsection
+
+<div class="container">
+        <div class="row g-3">
+            <div class="col-md-6">
+                <div class="card">
+                    <p class="title">Total Students <img src="{{ asset('images/student-icon.png') }}" alt="" class="icon"></p>
+                    <h3>120</h3>
+                </div>
             </div>
-            <div class="tile">
-                <p>Need Attention</p>
-                <h2>5</h2>
+            <div class="col-md-6">
+                <div class="card">
+                    <p class="title">Need Attention <img src="{{ asset('images/warning-removebg-preview.png') }}" alt="" class="icon"></p>
+                    <h3>5</h3>
+                </div>
             </div>
         </div>
-
-        <div class="behavior-report-controls">
-            <div class="behavior-labels">
-                <span class="behavior-label" style="background: blue;"></span>
-                <span>Boys Behavior</span>
-                <span class="behavior-label" style="background: pink;"></span>
-                <span>Girls Behavior</span>
-            </div>
-            <div class="time-select-container">
-                <select class="time-select" id="timeSelect">
-                    <option value="monthly" selected>Monthly</option>
-                </select>
+        
+        <div class="row g-3 mt-3">
+            <div class="col-12">
+                <div class="card">
+                    <h2>Behavior Status Overview</h2>
+                    <div class="behavior-report-controls">
+                        <div class="behavior-labels">
+                            <span class="behavior-label" style="background: blue;"></span>
+                            <span>Boys Behavior</span>
+                            <span class="behavior-label" style="background: pink;"></span>
+                            <span>Girls Behavior</span>
+                        </div>
+                        <div class="time-select-container">
+                            <select class="form-select">
+                                <option value="monthly" selected>Monthly</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="behavior-report">
+                        <canvas id="behaviorChart"></canvas>
+                    </div>
+                </div>
             </div>
         </div>
+</div>
+@endsection
 
-        <div class="behavior-report">
-            <canvas id="behaviorChart"></canvas>
-        </div>
-    </div>
-
+@push('scripts')
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         const monthlyData = {
@@ -130,6 +121,4 @@
             behaviorChart.update();
         });
     </script>
-    <script src="scripts.js"></script>
-</body>
-</html>
+@endpush
