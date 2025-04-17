@@ -28,3 +28,13 @@ Route::get('/student-manual', function () {
 
 
 
+Route::get('/behavior', function () {
+    return view('behavior');
+});
+Route::post('/behavior', [behaviorController::class, 'behavior'])->name('behavior');
+Route::get('/educator_violation', function () {
+    return view('educator_violation');
+});
+=======
+
+
