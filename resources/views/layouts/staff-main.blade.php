@@ -13,7 +13,6 @@
     <!-- Topbar -->
     <div class="nav-topbar">
         <img src="https://www.passerellesnumeriques.org/wp-content/uploads/2024/05/PN-Logo-English-White-Baseline.png.webp" alt="">
-        <p><strong>Admin User</strong></p>
         <form action="{{ route('logout') }}" method="post" style="display:inline">
             @csrf
             <button type="submit">
@@ -29,11 +28,11 @@
         <!-- Sidebar -->
         <div class="nav-sidebar">
             <ul class="list-unstyled">
-                <li class="fw-bold bg-warning p-3"><img src="{{asset('images/dashboad.png')}}" alt=""> Dashboard</li>
-                <li class="p-3"><img src="{{ asset('images/violation.png') }}" alt=""> Violations</li>
-                <li class="p-3"><img src="{{ asset('images/monitor.png') }}" alt=""> Behavior Monitoring</li>
-                <li class="p-3"><img src="{{ asset('images/reward.png') }}" alt=""> Reward System</li>
-                <button class="dropdown-btn p-3"><img src="book.png" alt="" style="height: 25px; width: 25px; margin-right: 10px;">Student Violation Manual</button>
+                <li class="p-3 {{ request()->routeIs('staff-dashboard') ? 'active' : ''}}"><a href="{{ route('staff-dashboard') }}" class="text-decoration-none"><img src="{{asset('images/dashboard.png')}}" alt=""> Dashboard</a></li>
+                <li class="p-3"><img src="{{ asset('images/warning (1).png') }}" alt=""> Violations</li>
+                <li class="p-3 {{ request()->routeIs('behavior') ? 'active' : '' }}"><a href="{{ route('behavior') }}" class="text-decoration-none"><img src="{{ asset('images/online-report.png') }}" alt=""> Behavior Monitoring</a></li>
+                <li class="p-3"><img src="{{ asset('images/giftbox.png') }}" alt=""> Reward System</li>
+                <button class="dropdown-btn p-3"><img src="{{ asset('images/manual.png') }}" alt="" style="height: 25px; width: 25px; margin-right: 10px;">Student Violation Manual</button>
                 <div class="dropdown-container">
                     <a href="page2.html">General Behavior</a>
                     <a href="page3.html">Schedules</a>
@@ -50,6 +49,7 @@
             @yield('content')
             @yield('manual')
             @yield('tabls-of-contents')
+            @yield('behavior')
         </div>
     
 

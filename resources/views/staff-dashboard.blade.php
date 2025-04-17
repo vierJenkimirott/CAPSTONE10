@@ -2,6 +2,7 @@
 @extends('layouts.staff-main')
 
 @section('content')
+<h2 class="mb-5">Dashboard</h2>
     <div class="row g-3">
         <div class="col-md-6">
             <div class="card">
