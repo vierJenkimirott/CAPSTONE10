@@ -63,11 +63,29 @@ Route::get('/staff-login', [LoginController::class, 'showLoginForm'])->name('sta
 Route::post('/staff-login', [LoginController::class, 'processLogin']);
 Route::get('/staff-dashboard', [LoginController::class, 'dashboard'])->name('staff-dashboard');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
 Route::get('/behavior', [BehaviorController::class, 'behavior'])->name('behavior');
 Route::post('/behavior', [BehaviorController::class, 'behavior']);
+
+Route::get('/behavior', function (){
+    return view('behavior');
+})->name('behavior');
+Route::get('/staff-violation', function () {
+    return view('staff-violation'); // or your correct view path
+});
 Route::get('/student-manual', function () {
     return view('student-manual');
 })->name('student.manual');
 
+
+
+Route::get('/behavior', function () {
+    return view('behavior');
+});
+Route::post('/behavior', [behaviorController::class, 'behavior'])->name('behavior');
+Route::get('/educator_violation', function () {
+    return view('educator_violation');
+});
+=======
 
 
