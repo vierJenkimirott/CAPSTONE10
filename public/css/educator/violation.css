@@ -4,74 +4,23 @@
     box-sizing: border-box;
   }
   
+  .main-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    padding: 1.5rem;
+    margin-top: 60px;
+    background: #f8f9fa;
+    min-height: calc(100vh - 60px);
+}
+
   body {
     font-family: Arial, sans-serif;
-  }
-  
-  .layout {
-    display: flex;
-    height: 100vh;
-    overflow: hidden;
-  }
-  
-  .sidebar {
-    width: 220px;
-    background-color: #39bdf3;
-    padding-top: 20px;
-    flex-shrink: 0;
-  }
-  
-  .sidebar a {
-    color: #000;
-    text-decoration: none;
-    padding: 12px 20px;
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-    border-radius: 10px;
-    margin: 5px 10px;
-    transition: 0.2s;
-  }
-  
-  .sidebar a i {
-    margin-right: 10px;
-  }
-  
-  .sidebar a.active {
-    background-color: #ffa23d;
-    font-weight: bold;
-  }
-  
-  .main-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-  }
-  
-  .header {
-    background-color: #f5f5f5;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    border-bottom: 1px solid #ccc;
-    flex-shrink: 0;
-  }
-  
-  .logo {
-    font-weight: bold;
-  }
-  
-  .admin-user {
-    font-size: 14px;
   }
   
   main {
     flex: 1;
     padding: 20px;
-    background-color: #f19c47;
+    background-color: white;
   }
   
   .top-buttons {

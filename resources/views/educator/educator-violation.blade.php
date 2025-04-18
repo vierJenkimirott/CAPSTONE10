@@ -1,30 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Violation</title>
-  <link rel="stylesheet" href="violation.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
-  <div class="header">
-    <div class="logo">LOGO</div>
-    <div class="admin-user">Admin User</div>
-  </div>
+@extends('layouts.staff-main')
 
-  <div class="layout">
-    <div class="sidebar">
-      <a href="#"><i class="fas fa-chart-line"></i>Dashboard</a>
-      <a href="#" class="active"><i class="fas fa-triangle-exclamation"></i>Violations</a>
-      <a href="#"><i class="fas fa-eye"></i>Behavior Monitoring</a>
-      <a href="#"><i class="fas fa-gift"></i>Reward System</a>
-    </div>
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/educator/violation.css') }}">
+@endsection
 
-    <main>
+@section('educator-violation')
+<h2>Violation</h2>
+<main>
       <div class="top-buttons">
-        <a href="addViolator.html" class="btn">+ Add Violator</a>
-        <a href="addViolation.html" class="btn">+ Add Violation</a>
+        <a href="{{route('educator_add_violator')}}" class="btn">+ Add Violator</a>
+        <a href="{{route('educator_add_violation')}}" class="btn">+ Add Violation</a>
         <a href="violationHistory.html" class="btn">Student Violation History</a>
       </div>
 
@@ -103,6 +88,4 @@
         </table>
       </section>
     </main>
-  </div>
-</body>
-</html>
+@endsection
