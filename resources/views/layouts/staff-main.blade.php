@@ -29,10 +29,10 @@
         <div class="nav-sidebar">
             <ul class="list-unstyled">
                 <li class="p-3 {{ request()->routeIs('staff-dashboard') ? 'active' : ''}}"><a href="{{ route('staff-dashboard') }}" class="text-decoration-none"><img src="{{asset('images/dashboard.png')}}" alt=""> Dashboard</a></li>
-                <li class="p-3"><img src="{{ asset('images/warning (1).png') }}" alt=""> Violations</li>
-                <li class="p-3 {{ request()->routeIs('behavior') ? 'active' : '' }}"><a href="{{ route('behavior') }}" class="text-decoration-none"><img src="{{ asset('images/online-report.png') }}" alt=""> Behavior Monitoring</a></li>
-                <li class="p-3"><img src="{{ asset('images/giftbox.png') }}" alt=""> Reward System</li>
-                <button class="dropdown-btn p-3"><img src="{{ asset('images/manual.png') }}" alt="" style="height: 25px; width: 25px; margin-right: 10px;">Student Violation Manual</button>
+                <li class="p-3 {{ request()->routeIs('educator-violation') ? 'active' : ''}}"><a href="{{ route('educator-violation') }}" class="text-decoration-none"><img src="{{ asset('images/warning (1).png') }}" alt=""> Violations</a></li>
+                <li class="p-3 {{ request()->routeIs('behavior') ? 'active' : '' }}"><a href="{{ route('behavior') }}" class="text-decoration-none"><img src="{{ asset('images/online-report.png') }}" alt=""> Behavior Monitoring</li>
+                <li class="p-3"><img src="{{ asset('images/giftbox.png') }}" alt=""> Reward System</a></li>
+                <li class="p-3 dropdown-btn"><a href="{{ route('student-manual')}}" class="text-decoration-none"><img src="{{ asset('images/manual.png') }}" alt="" style="height: 25px; width: 25px; margin-right: 10px;">Student Violation Manual</a></li>
                 <div class="dropdown-container">
                     <a href="page2.html">General Behavior</a>
                     <a href="page3.html">Schedules</a>
@@ -48,8 +48,11 @@
         <div class="main-content p-4 w-100">
             @yield('content')
             @yield('manual')
-            @yield('tabls-of-contents')
+            @yield('table-of-contents')
             @yield('behavior')
+            @yield('educator-violation')
+            @yield('add-violation')
+            @yield('add-violator')
         </div>
     
 
@@ -70,7 +73,6 @@
             dropdownContainer.style.display = isVisible ? "none" : "block";
             
             // Navigate to the first page in the dropdown (page2.html)
-            window.location.href = "{{ route('student.manual') }}";
         });
     });
 

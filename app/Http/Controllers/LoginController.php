@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     public function showLoginForm (){
-        return view ('staff-login');
+        return view ('educator.staff-login');
     }
 
     public function processLogin (Request $request){
@@ -30,7 +30,7 @@ class LoginController extends Controller
     }
 
     public function dashboard(){
-        return view('staff-dashboard');
+        return view('educator.staff-dashboard');
     }
 
     public function logout(){
