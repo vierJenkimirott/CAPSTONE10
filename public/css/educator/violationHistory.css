@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  
+  .header {
+    background-color: white;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    border-bottom: 2px solid #ccc;
+    gap: 100px;
+  }
+  
+  
+  .main {
+    background-color: #ED994D;
+    padding: 30px;
+    min-height: 100vh;
+  }
+  
+  .top-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .back-button {
+    background-color: #A45A1E;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .search-bar {
+    flex-grow: 1;
+    margin: 0 20px;
+  }
+  
+  .search-bar input {
+    width: 50%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  .class-buttons button {
+    background-color: #A45A1E;
+    color: black;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.2);
+    display: flex;
+    padding: 50px;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  
+  .violations {
+    line-height: 1.6;
+  }
+  
+  .dates {
+    text-align: right;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  .name {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  

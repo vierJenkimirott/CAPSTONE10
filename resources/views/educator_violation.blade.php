@@ -24,9 +24,9 @@
 
     <main>
       <div class="top-buttons">
-      <a href="{{ url('/addViolator.html') }}" class="btn">+ Add Violation</a>
-        <a href="addViolation.html" class="btn">+ Add Violation</a>
-        <a href="violationHistory.html" class="btn">Student Violation History</a>
+      <a href="{{ url('/add-violator') }}" class="btn">+ Add Violator</a>
+        <a href="addViolation.php" class="btn">+ Add Violation</a>
+        <a href="violationHistory.php" class="btn">Student Violation History</a>
       </div>
 
       <section class="warning-section">
