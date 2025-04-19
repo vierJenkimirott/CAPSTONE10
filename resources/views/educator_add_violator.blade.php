@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Add Violator</title>
-  <link rel="stylesheet" href="addViolator.css" />
+  <link rel="stylesheet" href="{{ asset('css/educator/addViolator.css') }}">
+
 </head>
 <body>
   <div class="header">
@@ -15,7 +16,7 @@
     <button class="back-btn">back</button>
 
     <form class="form-container" id="violator-form">
-      <!-- Always Visible Fields -->
+     
       <select class="form-field" id="student-select" required>
         <option selected disabled>Select Student</option>
         <option>Dion Paner</option>
@@ -26,7 +27,6 @@
 
       <input type="date" class="form-field" id="violation-date" required />
 
-      <!-- Progressive Violation Section -->
       <select class="form-field" id="violation-type">
         <option selected disabled>Type of Violation</option>
         <option value="phone">Not returning phone</option>
@@ -81,7 +81,7 @@
       }
     });
     document.querySelector('.back-btn').addEventListener('click', () => {
-  window.location.href = 'violation.html'; // update with actual filename
+  window.location.href = 'violation.html'; 
 });
 
   </script>

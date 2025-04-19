@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Violation</title>
-  <link rel="stylesheet" href="violation.css" />
+  <link rel="stylesheet" href="{{ asset('css/educator/violation.css') }}">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -23,7 +24,7 @@
 
     <main>
       <div class="top-buttons">
-        <a href="addViolator.html" class="btn">+ Add Violator</a>
+      <a href="{{ url('/addViolator.html') }}" class="btn">+ Add Violation</a>
         <a href="addViolation.html" class="btn">+ Add Violation</a>
         <a href="violationHistory.html" class="btn">Student Violation History</a>
       </div>

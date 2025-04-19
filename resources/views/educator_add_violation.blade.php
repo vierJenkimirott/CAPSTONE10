@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Add Violation</title>
-  <link rel="stylesheet" href="addViolation.css" />
+  <link rel="stylesheet" href="{{ asset('css/educator/addViolation.css') }}">
+
 </head>
 <body>
   <div class="header">
