@@ -3,8 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BehaviorController;
+
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UserController;
+
 use App\Http\Controllers\StudentController;
 
 // <<<<<<< new/violation-features
@@ -19,6 +21,44 @@ use App\Http\Controllers\StudentController;
 // // }); 
 // >>>>>>> main
 
+
+
+// Route::get('/student_violation', function () {
+//     return view('student.student_violation'); 
+// });
+
+// Route::get('/student_behavior', function () {
+//     return view('student.student_behavior'); 
+// });
+
+// Route::get('/student_reward', function () {
+//     return view('student.student_reward'); 
+// });
+
+Route::get('/student_login', [StudentController::class, 'showLoginForm'])->name('student.login');
+Route::post('/student_login', [StudentController::class, 'processLogin']);
+Route::get('/student_account', [StudentController::class, 'account'])->name('student.account');
+Route::post('/student_logout', [StudentController::class, 'logout'])->name('student.logout');
+
+Route::get('/student_violation', [StudentController::class, 'violation'])->name('student.violation');
+
+Route::get('/student_behavior', function () {
+    return view('student.student_behavior');
+})->name('student.behavior');
+
+Route::get('/student_reward', function () {
+    return view('student.student_reward');
+})->name('student.reward');
+
+Route::get('/student_earn_points', function () {
+    return view('student.student_earn_points');
+})->name('student.earn_points');
+
+Route::get('/student_redemption', function () {
+    return view('student.student_redemption');
+})->name('student.redemption');
+
+Route::get('/staff-login', [LoginController::class, 'showLoginForm'])->name('staff.login');
 
 //ADMIN ROUTES
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
@@ -39,9 +79,10 @@ Route::get('/student_earn_points', [StudentController::class, 'earnPoints'])->na
 Route::get('/student_redemption', [StudentController::class, 'redemption'])->name('student.student_redemption');
 
 Route::get('/staff-login', [LoginController::class, 'showLoginForm'])->name('staff-login');
+
 Route::post('/staff-login', [LoginController::class, 'processLogin']);
 Route::get('/staff-dashboard', [LoginController::class, 'dashboard'])->name('staff-dashboard');
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::post('/staff_logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/behavior', [BehaviorController::class, 'behavior'])->name('behavior');
 Route::post('/behavior', [BehaviorController::class, 'behavior']);
@@ -78,8 +119,6 @@ Route::get('/student-manual/equipment', function () {
 Route::get('/student-manual/center-tasking', function () {
     return view('student-manual.center-tasking');
 })->name('student-manual.center-tasking');
-
-})->name('student.manual')
 
 Route::get('/educator-violation', function () {
     return view('educator.educator-violation');
