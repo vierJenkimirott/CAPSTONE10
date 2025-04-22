@@ -20,7 +20,7 @@
             </div>
         @endif
 
-        <form action="{{ url('/staff-login') }}" method="POST">
+        <form action="{{ url('/student_login') }}" method="POST">
             @csrf
             <div class="input-group">
                 <label for="id">Faculty ID / Student ID</label>

@@ -1,5 +1,3 @@
-
-
 @extends('layouts.student')
 
 @section('title', 'Rewards')
@@ -15,8 +13,8 @@
 </div>
 
 <div class="earn-history-box">
-    <button onclick="location.href='{{ route('student.student_earn_points') }}'">Earn more points</button>
-    <button onclick="location.href='{{ route('student.student_redemption') }}'">History</button>
+    <button onclick="location.href='{{ route('student.earn_points') }}'">Earn more points</button>
+    <button onclick="location.href='{{ route('student.redemption') }}'">History</button>
 
 </div>
 

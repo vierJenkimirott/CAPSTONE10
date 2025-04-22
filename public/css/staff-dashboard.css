@@ -61,12 +61,13 @@ button{
     width: 250px;
     height: 100vh;
     background: #E88C44; 
-    color: white;
+    color: #ffffff;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 2000;
     padding-top: 80px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .nav-sidebar ul {
@@ -75,32 +76,51 @@ button{
     margin: 0;
 }
 
-.nav-item {
+.nav-sidebar li {
     margin: 0;
     padding: 0;
 }
 
-.dropdown-btn {
+.nav-sidebar li a {
     display: flex;
-    align-items: center;
-    padding: 15px 20px;
+    padding: 5px 0;
     color: white;
     text-decoration: none;
-    font-size: 16px;
-    width: 100%;
-    text-align: left;
-    border: none;
+    margin-left: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
     background: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
 }
 
+.nav-sidebar li.active {
+    background-color: none;
+}
 
-.nav-item.active > .nav-link,
-.nav-item.active > .dropdown-btn {
-    background: #F4A261;
+.nav-sidebar li.active a {
+    color: #ffffff;
+}
+
+.nav-sidebar li a:hover {
+    color: white;
     font-weight: bold;
 }
+
+.nav-sidebar li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #ffc107;
+    transition: width 0.3s ease;
+}
+
+.nav-sidebar li a:hover::after {
+    width: 95%; 
+}
+
 
 .nav-sidebar img, .dropdown-btn img {
     height: 25px;
@@ -336,53 +356,4 @@ h2 {
 .col-md-6, .col-12 {
     padding-left: 1rem;
     padding-right: 1rem;
-}
-
-.nav-sidebar li a {
-    display: flex;
-    align-items: center;
-    color: white;
-    text-decoration: none;
-    width: 100%;
-    height: 100%;
-    margin: 5px;
-    transition: all 0.3s ease;
-    position: relative;
-    padding-bottom: 5px;
-}
-
-.nav-sidebar li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: #ffc107;
-    transition: width 0.3s ease;
-}
-
-.nav-sidebar li a:hover {
-    color: white;
-    font-weight: bold;
-}
-
-.nav-sidebar li a:hover::after {
-    width: 100%;
-}
-
-.nav-sidebar li.active a {
-    color: white;
-    font-weight: bold;
-    margin: 5px;
-}
-
-.nav-sidebar li.active a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: #ffc107;
 }
