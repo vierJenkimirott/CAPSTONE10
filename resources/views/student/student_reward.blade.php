@@ -30,6 +30,6 @@
         <button>redeem</button>
     </div>
 
-    </div> --}}
+    </div> 
 </div>
 @endsection

@@ -32,6 +32,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+
     z-index: 2000;
     padding-top: 80px;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
@@ -52,6 +53,32 @@ body {
     height: 25px;
     width: 25px;
     margin-right: 10px;
+
+    z-index: 1000;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #55A6F3;
+}
+
+
+
+.header .header-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.header button {
+    background: #E88C44;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+
 }
 
 .main-content {
@@ -354,3 +381,4 @@ h2 {
     width: 24px;
     height: 24px;
 }
+
