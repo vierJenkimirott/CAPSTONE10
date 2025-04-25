@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Design</title>
     <link rel="stylesheet" href="{{ asset('css/style.blade.css') }}">
-    <script src="https://kit.fontawesome.com/yourkitcode.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     
     <div class="top-navbar">
         <div class="logo">
-            LOGO
+            <img src="{{ asset('images/Picture3.jpg') }}" alt="School Logo">
         </div>
     </div>
 
@@ -19,10 +19,10 @@
         <br><br>
         <nav>
             <ul>
-                <li><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                <li><a href="#"><i class="fas fa-exclamation-triangle"></i> Violations</a></li>
-                <li><a href="#" class="active"><i class="fas fa-chart-line"></i> Behavior Monitoring</a></li>
-                <li><a href="#"><i class="fas fa-gift"></i> Rewards</a></li>
+                <li><a href="{{ route('dashboard') }}"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="{{ route('violations') }}"><i class="fas fa-exclamation-circle"></i> Violations</a></li>
+                <li><a href="{{ route('behavior') }}" class="active"><i class="fas fa-chart-line"></i> Behavior Monitoring</a></li>
+                <li><a href="{{ route('rewards') }}"><i class="fas fa-award"></i> Rewards</a></li>
             </ul>
         </nav>
     </div>
@@ -106,6 +106,11 @@
                     y: {
                         grid: {
                             display: true
+                        },
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 10
                         }
                     }
                 }
@@ -132,4 +137,4 @@
     </script>
     <script src="scripts.js"></script>
 </body>
-</html>
+</html>  
