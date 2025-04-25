@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+<<<<<<< HEAD
+use App\Http\Controllers\RewardsController;
+=======
 use App\Http\Controllers\BehaviorController;
 
 use App\Http\Controllers\Admin\DashboardController;
@@ -21,6 +24,7 @@ use App\Http\Controllers\NotificationController;
 // //     return view('staff');
 // // }); 
 // >>>>>>> main
+>>>>>>> 2549668442a0bcce2cfd0f89afbac988f1eb5a12
 
 
 
@@ -111,4 +115,23 @@ Route::get('/educator_add_violator', function () {
     return view('educator.educator_add_violator');
 })->name('educator_add_violator');
 
+<<<<<<< HEAD
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
+Route::get('/violations', function () {
+    return view('violations');
+})->name('violations');
+
+Route::get('/behavior', function () {
+    return view('behavior');
+})->name('behavior');
+
+Route::get('/rewards', [RewardsController::class, 'index'])->name('rewards');
+Route::get('/rewards/add', [RewardsController::class, 'create'])->name('rewards.add');
+Route::get('/rewards/pending', [RewardsController::class, 'pending'])->name('rewards.pending');
+Route::post('/rewards', [RewardsController::class, 'store'])->name('rewards.store');
+=======
+>>>>>>> 2549668442a0bcce2cfd0f89afbac988f1eb5a12
 

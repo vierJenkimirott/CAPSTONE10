@@ -1,6 +1,37 @@
+<<<<<<< HEAD:resources/views/behavior.blade.php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Design</title>
+    <link rel="stylesheet" href="{{ asset('css/style.blade.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    
+    <div class="top-navbar">
+        <div class="logo">
+            <img src="{{ asset('images/Picture3.jpg') }}" alt="School Logo">
+        </div>
+    </div>
+
+    <div class="navbar">
+        <br><br>
+        <nav>
+            <ul>
+                <li><a href="{{ route('dashboard') }}"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="{{ route('violations') }}"><i class="fas fa-exclamation-circle"></i> Violations</a></li>
+                <li><a href="{{ route('behavior') }}" class="active"><i class="fas fa-chart-line"></i> Behavior Monitoring</a></li>
+                <li><a href="{{ route('rewards') }}"><i class="fas fa-award"></i> Rewards</a></li>
+            </ul>
+        </nav>
+    </div>
+=======
 @extends('layouts.staff-main')
 
 @section('content')
+>>>>>>> 2549668442a0bcce2cfd0f89afbac988f1eb5a12:resources/views/educator/behavior.blade.php
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/behavior.css') }}">
@@ -97,6 +128,11 @@
                     y: {
                         grid: {
                             display: true
+                        },
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 10
                         }
                     }
                 }
@@ -121,4 +157,10 @@
             behaviorChart.update();
         });
     </script>
+<<<<<<< HEAD:resources/views/behavior.blade.php
+    <script src="scripts.js"></script>
+</body>
+</html>  
+=======
 @endpush
+>>>>>>> 2549668442a0bcce2cfd0f89afbac988f1eb5a12:resources/views/educator/behavior.blade.php
