@@ -1,3 +1,4 @@
+<<<<<<< HEAD:resources/views/behavior.blade.php
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,38 +27,59 @@
             </ul>
         </nav>
     </div>
+=======
+@extends('layouts.staff-main')
 
-    <div class="main-content">
-        <div class="tiles">
-            <div class="tile">
-                <p>Total Students</p>
-                <h2>120</h2>
+@section('content')
+>>>>>>> 2549668442a0bcce2cfd0f89afbac988f1eb5a12:resources/views/educator/behavior.blade.php
+
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/behavior.css') }}">
+@endsection
+
+<div class="container">
+        <div class="row g-3">
+            <div class="col-md-6">
+                <div class="card">
+                    <p class="title">Total Students <img src="{{ asset('images/student-icon.png') }}" alt="" class="icon"></p>
+                    <h3>120</h3>
+                </div>
             </div>
-            <div class="tile">
-                <p>Need Attention</p>
-                <h2>5</h2>
+            <div class="col-md-6">
+                <div class="card">
+                    <p class="title">Need Attention <img src="{{ asset('images/warning-removebg-preview.png') }}" alt="" class="icon"></p>
+                    <h3>5</h3>
+                </div>
             </div>
         </div>
-
-        <div class="behavior-report-controls">
-            <div class="behavior-labels">
-                <span class="behavior-label" style="background: blue;"></span>
-                <span>Boys Behavior</span>
-                <span class="behavior-label" style="background: pink;"></span>
-                <span>Girls Behavior</span>
-            </div>
-            <div class="time-select-container">
-                <select class="time-select" id="timeSelect">
-                    <option value="monthly" selected>Monthly</option>
-                </select>
+        
+        <div class="row g-3 mt-3">
+            <div class="col-12">
+                <div class="card">
+                    <h2>Behavior Status Overview</h2>
+                    <div class="behavior-report-controls">
+                        <div class="behavior-labels">
+                            <span class="behavior-label" style="background: blue;"></span>
+                            <span>Boys Behavior</span>
+                            <span class="behavior-label" style="background: pink;"></span>
+                            <span>Girls Behavior</span>
+                        </div>
+                        <div class="time-select-container">
+                            <select class="form-select">
+                                <option value="monthly" selected>Monthly</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="behavior-report">
+                        <canvas id="behaviorChart"></canvas>
+                    </div>
+                </div>
             </div>
         </div>
+</div>
+@endsection
 
-        <div class="behavior-report">
-            <canvas id="behaviorChart"></canvas>
-        </div>
-    </div>
-
+@push('scripts')
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         const monthlyData = {
@@ -135,6 +157,10 @@
             behaviorChart.update();
         });
     </script>
+<<<<<<< HEAD:resources/views/behavior.blade.php
     <script src="scripts.js"></script>
 </body>
 </html>  
+=======
+@endpush
+>>>>>>> 2549668442a0bcce2cfd0f89afbac988f1eb5a12:resources/views/educator/behavior.blade.php
