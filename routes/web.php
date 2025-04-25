@@ -79,8 +79,6 @@ Route::get('/student-manual/center-tasking', function () {
     return view('student-manual.center-tasking');
 })->name('student-manual.center-tasking');
 
-})->name('student.manual')
-
 Route::get('/educator-violation', function () {
     return view('educator.educator-violation');
 })->name('educator-violation');
