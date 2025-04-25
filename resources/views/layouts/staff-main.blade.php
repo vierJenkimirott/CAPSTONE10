@@ -47,12 +47,6 @@
         <!-- Main Content -->
         <div class="main-content p-4 w-100">
             @yield('content')
-            @yield('manual')
-            @yield('table-of-contents')
-            @yield('behavior')
-            @yield('educator-violation')
-            @yield('add-violation')
-            @yield('add-violator')
         </div>
     
 

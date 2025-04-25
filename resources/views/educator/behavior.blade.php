@@ -1,6 +1,6 @@
 @extends('layouts.staff-main')
 
-@section('behavior')
+@section('content')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/behavior.css') }}">

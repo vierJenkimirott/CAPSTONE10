@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{{ asset('css/educator/violation.css') }}">
 @endsection
 
-@section('educator-violation')
+@section('content')
 <h2>Violation</h2>
 <main>
       <div class="top-buttons">
