@@ -2,6 +2,10 @@
 
 @section('title', 'Behavior Report')
 
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/student-violation.css') }}">
+    @endsection
+
 @section('content')
     <div class="container">
         <h2 style="text-align: left; color: navy;">Behavior Report</h2>
@@ -9,13 +13,13 @@
             <button>12 Months</button>
             <button class="active">6 Months</button>
         </div>
-        <div class="chart-container">
+        <div class="chart-container" style="position: relative; height: 400px; width: 100%;">
             <canvas id="behaviorChart"></canvas>
         </div>
     </div>
 
-   
-
+    @push('scripts')
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>   
     <script>
         const ctx = document.getElementById('behaviorChart').getContext('2d');
         const behaviorChart = new Chart(ctx, {
@@ -50,4 +54,5 @@
             }
         });
     </script>
+    @endpush
 @endsection

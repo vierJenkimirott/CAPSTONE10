@@ -2,9 +2,9 @@
 
 @section('title', 'Rewards')
 
-@push('styles')
-<link rel="stylesheet" href="{{ asset('css/student.css') }}">
-@endpush
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/student-violation.css') }}">
+@endsection
 
 @section('content')
 <div class="balance-box">

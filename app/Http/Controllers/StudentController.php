@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\View;
 
 class StudentController extends Controller
 {
+    public function __construct()
+    {
+        // Share unreadCount with all views
+        View::share('unreadCount', 0); // For now, we'll set a static count
+    }
 
     public function showLoginForm (){
         return view ('student.student_login');
@@ -30,19 +36,11 @@ class StudentController extends Controller
         return back()->withErrors(['id'=>'Invalid credentials']);
     }
 
-    public function account(){
-        return view('student.student_account');
-    }
-
     public function logout(){
         Auth::logout();
         return redirect()->route('student.login');
+    }
 
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
-    
     public function account()
     {
         $user = Auth::user();
