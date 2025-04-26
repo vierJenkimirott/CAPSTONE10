@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\UserController;
 
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\EducatorController;
 
 // <<<<<<< new/violation-features
 // =======
@@ -99,16 +100,21 @@ Route::get('/student-manual/center-tasking', function () {
     return view('student-manual.center-tasking');
 })->name('student-manual.center-tasking');
 
-Route::get('/educator-violation', function () {
-    return view('educator.educator-violation');
-})->name('educator-violation');
+Route::get('/educator-violation', [EducatorController::class, 'showViolations'])->name('educator-violation');
+Route::post('/educator/add-violation-type', [EducatorController::class, 'storeViolationType'])->name('educator.add-violation-type');
+Route::get('/educator/violation-form-data', [EducatorController::class, 'getViolationFormData'])->name('educator.violation-form-data');
+Route::get('/educator/violation-types', [EducatorController::class, 'getViolationTypesList'])->name('educator.violation-types');
 
 Route::get('/educator_add_violation', function () {
     return view('educator.educator_add_violation');
 })->name('educator_add_violation');
 
-Route::get('/educator_add_violator', function () {
-    return view('educator.educator_add_violator');
-})->name('educator_add_violator');
+Route::get('/educator_add_violator', [App\Http\Controllers\EducatorController::class, 'addViolator'])->name('educator_add_violator');
+Route::get('/educator/violation-types/{categoryId}', [App\Http\Controllers\EducatorController::class, 'getViolationTypes'])->name('educator.violation-types');
+Route::post('/educator/add-violator', [App\Http\Controllers\EducatorController::class, 'storeViolator'])->name('educator.add-violator');
 
+// Violation View and Edit Routes
+Route::get('/educator/violation/{id}', [App\Http\Controllers\EducatorController::class, 'viewViolation'])->name('educator_view_violation');
+Route::get('/educator/violation/{id}/edit', [App\Http\Controllers\EducatorController::class, 'editViolation'])->name('educator_edit_violation');
+Route::put('/educator/violation/{id}', [App\Http\Controllers\EducatorController::class, 'updateViolation'])->name('educator_update_violation');
 
