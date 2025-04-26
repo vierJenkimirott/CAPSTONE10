@@ -2,6 +2,23 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/educator/violation.css') }}">
+    <script src="https://kit.fontawesome.com/4e45d9ad8d.js" crossorigin="anonymous"></script>
+    <style>
+        .action-icon {
+            color: #666;
+            margin: 0 5px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .action-icon:hover {
+            color: #333;
+        }
+        
+        .action-icon i {
+            font-size: 1.1em;
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -37,53 +54,62 @@
             <option>High</option>
             <option>Very High</option>
           </select>
-          <button class="view-more">View More</button>
         </div>
 
         <table>
           <thead>
             <tr>
               <th>Violation</th>
+              <th>Category</th>
               <th>Student</th>
               <th>Severity</th>
+              <th>Offense</th>
+              <th>Penalty</th>
               <th>Date</th>
               <th>Status</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>No returning phone</td>
-              <td>Dion Paner</td>
-              <td class="high">High</td>
-              <td>Feb 14, 2024</td>
-              <td class="pending">Pending</td>
-              <td><i class="fas fa-edit"></i> <i class="fas fa-eye"></i></td>
-            </tr>
-            <tr>
-              <td>Relationship</td>
-              <td>Angelo Parocho</td>
-              <td class="high">High</td>
-              <td>Feb 14, 2024</td>
-              <td class="pending">Pending</td>
-              <td><i class="fas fa-edit"></i> <i class="fas fa-eye"></i></td>
-            </tr>
-            <tr>
-              <td>Eating inside room</td>
-              <td>Sarah Jaomuad</td>
-              <td class="high">High</td>
-              <td>Feb 14, 2024</td>
-              <td class="pending">Pending</td>
-              <td><i class="fas fa-edit"></i> <i class="fas fa-eye"></i></td>
-            </tr>
-            <tr>
-              <td>Hanging clothes in the window</td>
-              <td>Jenvier Montano</td>
-              <td class="high">High</td>
-              <td>Feb 14, 2024</td>
-              <td class="pending">Pending</td>
-              <td><i class="fas fa-edit"></i> <i class="fas fa-eye"></i></td>
-            </tr>
+          <tbody>
+            @foreach ($violations as $violation)
+              <tr>
+                <td>{{ $violation->violationType->violation_name }}</td>
+                <td>{{ $violation->offenseCategory->category_name }}</td>
+                <td>{{ $violation->student->fname }} {{ $violation->student->lname }}</td>
+                <td class="{{ strtolower($violation->severity) }}">{{ $violation->severity }}</td>
+                <td>{{ $violation->offense }}</td>
+                <td>
+                    @switch($violation->penalty)
+                        @case('W')
+                            Warning
+                            @break
+                        @case('VW')
+                            Verbal Warning
+                            @break
+                        @case('WW')
+                            Written Warning
+                            @break
+                        @case('Pro')
+                            Probation
+                            @break
+                        @case('Exp')
+                            Expulsion
+                            @break
+                    @endswitch
+                </td>
+                <td>{{ \Carbon\Carbon::parse($violation->violation_date)->format('M d, Y') }}</td>
+                <td class="{{ strtolower($violation->status) }}">{{ ucfirst($violation->status) }}</td>
+                <td>
+                  <a href="{{ route('educator_edit_violation', ['id' => $violation->id]) }}" class="action-icon" title="Edit Violation">
+                    <i class="fas fa-edit"></i>
+                  </a>
+                  <a href="{{ route('educator_view_violation', ['id' => $violation->id]) }}" class="action-icon" title="View Details">
+                    <i class="fas fa-eye"></i>
+                  </a>
+                </td>
+              </tr>
+            @endforeach
           </tbody>
         </table>
       </section>

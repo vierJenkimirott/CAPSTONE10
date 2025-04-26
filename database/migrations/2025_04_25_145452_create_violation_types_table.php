@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('violation_types', function (Blueprint $table) {
             $table->id();
             $table->foreignId('offense_category_id')->constrained()->onDelete('cascade');
-            $table->string('violation_name', 100);
+            $table->string('violation_name', 500);
             $table->text('description')->nullable();
             $table->enum('default_penalty', ['W', 'VW', 'WW', 'Pro', 'Exp'])->comment('W=Warning, VW=Verbal Warning, WW=Written Warning, Pro=Probation, Exp=Expulsion');
             $table->timestamps();

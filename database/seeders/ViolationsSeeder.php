@@ -23,11 +23,11 @@ class ViolationsSeeder extends Seeder
  
         DB::table('violations')->insert([
             // Low Severity - General Behavior
-            ['name' => 'Cooking in the kitchen for personal purposes and without the permission from the staff.', 'severity_id' => $lowId, 'offense_category_id' => $generalBehaviorCategoryId],
-            ['name' => 'Placing things in the fire exit and using it as a passageway.', 'severity_id' => $lowId, 'offense_category_id' => $generalBehaviorCategoryId],
-            ['name' => 'Speaking loudly, shouting and playing loud music inside the center.', 'severity_id' => $lowId, 'offense_category_id' => $generalBehaviorCategoryId],
-            ['name' => 'Skipping a meal without a valid reason.', 'severity_id' => $lowId, 'offense_category_id' => $generalBehaviorCategoryId],
-            ['name' => 'Hanging out on the rooftop.', 'severity_id' => $lowId, 'offense_category_id' => $generalBehaviorCategoryId],
+            ['violation_name' => 'Cooking in the kitchen for personal purposes and without the permission from the staff.', 'severity_id' => $lowId, 'offense_category_id' => $generalBehaviorCategoryId],
+            ['violation_name' => 'Placing things in the fire exit and using it as a passageway.', 'severity_id' => $lowId, 'offense_category_id' => $generalBehaviorCategoryId],
+            ['violation_name' => 'Speaking loudly, shouting and playing loud music inside the center.', 'severity_id' => $lowId, 'offense_category_id' => $generalBehaviorCategoryId],
+            ['violation_name' => 'Skipping a meal without a valid reason.', 'severity_id' => $lowId, 'offense_category_id' => $generalBehaviorCategoryId],
+            ['violation_name' => 'Hanging out on the rooftop.', 'severity_id' => $lowId, 'offense_category_id' => $generalBehaviorCategoryId],
 
             // Medium Severity - General Behavior
             ['name' => 'Disrespecting staff/students such as using foul languages, physical and verbal violence, bullying, backbiting, spreading gossip and name calling.', 'severity_id' => $mediumId, 'offense_category_id' => $generalBehaviorCategoryId],
