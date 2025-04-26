@@ -13,11 +13,11 @@ class LoginController extends Controller
 
     public function processLogin (Request $request){
         $request->validate([
-            'id'=> ['required', 'regex:/^20\d{2}[0-9]{2}[0-9]{4}C[0-9A-Za-z]{1}$/'],
+            'id'=> ['required', 'regex:/^(admin|20\d{2}[0-9]{2}[0-9]{4}C[0-9A-Za-z]{1})$/'],
             'password' => 'required|min:5',
         ]);
 
-        $validID = '2024010001C1';
+        $validID = 'admin';
         $validPassword = '12345';
 
         if ($request->id === $validID && $request->password === $validPassword) {

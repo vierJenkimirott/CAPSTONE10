@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             StudentDetailsSeeder::class,
             OffenseCategorySeeder::class,
             SeveritySeeder::class,
+            ViolationTypeSeeder::class,
             ViolationsSeeder::class,
         ]);
         // User::factory(10)->create();

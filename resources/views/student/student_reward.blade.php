@@ -1,12 +1,10 @@
-
-
 @extends('layouts.student')
 
 @section('title', 'Rewards')
 
-@push('styles')
-<link rel="stylesheet" href="{{ asset('css/student.css') }}">
-@endpush
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/student-violation.css') }}">
+@endsection
 
 @section('content')
 <div class="balance-box">
@@ -15,8 +13,8 @@
 </div>
 
 <div class="earn-history-box">
-    <button onclick="location.href='{{ route('student.student_earn_points') }}'">Earn more points</button>
-    <button onclick="location.href='{{ route('student.student_redemption') }}'">History</button>
+    <button onclick="location.href='{{ route('student.earn_points') }}'">Earn more points</button>
+    <button onclick="location.href='{{ route('student.redemption') }}'">History</button>
 
 </div>
 

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Staff Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('css/staff-dashboard.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     @yield('css')
@@ -47,12 +48,6 @@
         <!-- Main Content -->
         <div class="main-content p-4 w-100">
             @yield('content')
-            @yield('manual')
-            @yield('table-of-contents')
-            @yield('behavior')
-            @yield('educator-violation')
-            @yield('add-violation')
-            @yield('add-violator')
         </div>
     
 

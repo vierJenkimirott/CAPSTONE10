@@ -1,6 +1,8 @@
+
 @extends('layouts.staff-main')
 
-@section('behavior')
+@section('content')
+>>>>>>> 2549668442a0bcce2cfd0f89afbac988f1eb5a12:resources/views/educator/behavior.blade.php
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/behavior.css') }}">
@@ -97,6 +99,11 @@
                     y: {
                         grid: {
                             display: true
+                        },
+                        min: 0,
+                        max: 100,
+                        ticks: {
+                            stepSize: 10
                         }
                     }
                 }
@@ -121,4 +128,10 @@
             behaviorChart.update();
         });
     </script>
+<<<<<<< HEAD:resources/views/behavior.blade.php
+    <script src="scripts.js"></script>
+</body>
+</html>  
+=======
 @endpush
+>>>>>>> 2549668442a0bcce2cfd0f89afbac988f1eb5a12:resources/views/educator/behavior.blade.php
