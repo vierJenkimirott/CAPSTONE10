@@ -9,6 +9,9 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UserController;
 
 use App\Http\Controllers\StudentController;
+
+
+use App\Http\Controllers\StudentController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\EducatorController;
 
