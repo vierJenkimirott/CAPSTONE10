@@ -7,17 +7,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\StudentController;
 
-// <<<<<<< new/violation-features
-// =======
 
-// // Route::get('/', function () {
-// //     return view('welcome');
-// // });
-
-// // Route::get('/', function (){  
-// //     return view('staff');
-// // }); 
-// >>>>>>> main
 
 
 //ADMIN ROUTES
