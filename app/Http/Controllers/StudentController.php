@@ -49,8 +49,8 @@ class StudentController extends Controller
 
     public function violation()
     {
-        // You can add logic to fetch student violations here
-        return view('student.student_violation');
+        $violations = collect(); // Create an empty collection
+        return view('student.student_violation', compact('violations'));
     }
 
     public function behavior()

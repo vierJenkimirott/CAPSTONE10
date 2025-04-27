@@ -6,7 +6,16 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    .main-content {
+        margin-left: 250px;
+        padding: 20px;
+        padding-top: 80px;
+        min-height: 100vh;
+        width: calc(100% - 250px);
+        background-color: #f5f5f5;
+    }
 }
 
 button{
@@ -60,14 +69,13 @@ button{
 .nav-sidebar {
     width: 250px;
     height: 100vh;
-    background: #E88C44; 
+    background: #E88C44;
     color: #ffffff;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 2000;
-    padding-top: 80px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    padding-top: 60px;
 }
 
 .nav-sidebar ul {
@@ -356,4 +364,24 @@ h2 {
 .col-md-6, .col-12 {
     padding-left: 1rem;
     padding-right: 1rem;
+}
+
+.violation-status-overview-card {
+    height: 400px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem 1rem 1rem;
+}
+
+.violation-status-overview-card h2 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.violation-status-overview-card #behaviorChart {
+    max-width: 100%;
+    max-height: 320px;
 }

@@ -25,10 +25,9 @@
         </form>
     </div>
 
-    <div class="dashboard-wrapper d-flex">
         <!-- Sidebar -->
-        <div class="nav-sidebar">
-            <ul class="list-unstyled">
+    <div class="nav-sidebar">
+        <ul class="list-unstyled mb-0">
                 <li class="p-3 {{ request()->routeIs('staff-dashboard') ? 'active' : ''}}"><a href="{{ route('staff-dashboard') }}" class="text-decoration-none"><img src="{{asset('images/dashboard.png')}}" alt=""> Dashboard</a></li>
                 <li class="p-3 {{ request()->routeIs('educator-violation') ? 'active' : ''}}"><a href="{{ route('educator-violation') }}" class="text-decoration-none"><img src="{{ asset('images/warning (1).png') }}" alt=""> Violations</a></li>
                 <li class="p-3 {{ request()->routeIs('behavior') ? 'active' : '' }}"><a href="{{ route('behavior') }}" class="text-decoration-none"><img src="{{ asset('images/online-report.png') }}" alt=""> Behavior Monitoring</li>
@@ -44,14 +43,15 @@
                 </div>
             </ul>
         </div>
+        
+    <!-- Main Content -->
+    <div class="main-content">
+        @yield('content')
     </div>
-        <!-- Main Content -->
-        <div class="main-content p-4 w-100">
-            @yield('content')
-        </div>
     
 
     <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
@@ -59,7 +59,8 @@
         const dropdownBtn = document.querySelector(".dropdown-btn");
         const dropdownContainer = document.querySelector(".dropdown-container");
 
-        dropdownBtn.addEventListener("click", function (event) {
+        if (dropdownBtn && dropdownContainer) {
+            dropdownBtn.addEventListener("click", function (event) {
             // Prevent the default link behavior
             event.preventDefault();
             
@@ -73,12 +74,14 @@
 
         // Close the dropdown if the user clicks outside of it
         window.addEventListener("click", function (event) {
-            if (!dropdownBtn.contains(event.target) && !dropdownContainer.contains(event.target)) {
-                dropdownContainer.style.display = "none";
+            if (dropdownBtn && dropdownContainer && !dropdownBtn.contains(event.target) && !dropdownContainer.contains(event.target)) {
+                dropdownContainer.classList.remove("show");
             }
         });
+        }
 
     </script>
     @stack('scripts')
+    @yield('scripts')
 </body>
 </html>
