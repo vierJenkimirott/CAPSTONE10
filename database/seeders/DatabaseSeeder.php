@@ -18,13 +18,19 @@ class DatabaseSeeder extends Seeder
             OffenseCategorySeeder::class,
             SeveritySeeder::class,
             ViolationTypeSeeder::class,
-            ViolationsSeeder::class,
+            TestViolationsSeeder::class,
         ]);
         // User::factory(10)->create();
 
         User::factory()->create([
-            'name' => 'Test User',
+            'user_id' => 'TEST001',
+            'fname' => 'Test',
+            'lname' => 'User',
             'email' => 'test@example.com',
+            'role' => 'admin',
+            'status' => 'active',
+            'password' => bcrypt('password'),
+            'is_temp_password' => true
         ]);
     }
 }

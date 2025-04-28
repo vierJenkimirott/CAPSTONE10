@@ -4,60 +4,57 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/student-violation.css') }}">
+<style>
+    .no-violations {
+        text-align: center;
+        padding: 2rem;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        margin: 1rem 0;
+    }
+    .no-violations p {
+        color: #6c757d;
+        font-size: 1.1rem;
+        margin: 0;
+    }
+</style>
 @endsection
 
 @section('content')
 <div class="container">
     <h2>Violation History</h2>
 
-    <div class="violation-card" onclick="this.classList.toggle('open')">
-        <div class="violation-main">
-            <div class="title">⚠️ Did not surrender the phone</div>
-            <div class="date">01-20-25</div>
-            <span class="severity medium">Medium</span>
-            <div class="violation-details">
-                <p>Description:</p>
-                <p>Student failed to return phone at the designated time.</p>
-            </div>
+    @if($violations->isEmpty())
+        <div class="no-violations">
+            <p>No violations found.</p>
         </div>
-        <span class="status pending">Pending</span>
-    </div>
-
-    <div class="violation-card" onclick="this.classList.toggle('open')">
-        <div class="violation-main">
-            <div class="title">⚠️ Curfew Time</div>
-            <div class="date">01-21-25</div>
-            <span class="severity low">Low</span>
-            <div class="violation-details">
-                Student arrived late past the 10 PM curfew.
+    @else
+        @foreach($violations as $violation)
+        <div class="violation-card" onclick="this.classList.toggle('open')">
+            <div class="violation-main">
+                <div class="title">⚠️ {{ $violation->violation_name }}</div>
+                <div class="date">{{ \Carbon\Carbon::parse($violation->violation_date)->format('m-d-y') }}</div>
+                <span class="severity {{ strtolower($violation->severity) }}">{{ $violation->severity }}</span>
+                <div class="violation-details">
+                    <p>Category: {{ $violation->category_name }}</p>
+                    <p>Description: {{ $violation->offense }}</p>
+                    <p>Consequence: {{ $violation->consequence }}</p>
+                    @php
+                        $penaltyText = match($violation->penalty) {
+                            'W' => 'Warning',
+                            'VW' => 'Verbal Warning',
+                            'WW' => 'Written Warning',
+                            'Pro' => 'Probation',
+                            'Exp' => 'Expulsion',
+                            default => $violation->penalty
+                        };
+                    @endphp
+                    <p>Penalty: {{ $penaltyText }}</p>
+                </div>
             </div>
+            <span class="status {{ strtolower($violation->status) }}">{{ ucfirst($violation->status) }}</span>
         </div>
-        <span class="status resolved">Resolved</span>
-    </div>
-
-    <div class="violation-card" onclick="this.classList.toggle('open')">
-        <div class="violation-main">
-            <div class="title">⚠️ No Logbook</div>
-            <div class="date">01-22-25</div>
-            <span class="severity low">Low</span>
-            <div class="violation-details">
-                No logbook submitted during morning check-in.
-            </div>
-        </div>
-        <span class="status resolved">Resolved</span>
-    </div>
-
-    {{-- Example duplication for testing layout --}}
-    <div class="violation-card" onclick="this.classList.toggle('open')">
-        <div class="violation-main">
-            <div class="title">⚠️ No Logbook</div>
-            <div class="date">01-22-25</div>
-            <span class="severity low">Low</span>
-            <div class="violation-details">
-                No logbook submitted during morning check-in.
-            </div>
-        </div>
-        <span class="status resolved">Resolved</span>
-    </div>
+        @endforeach
+    @endif
 </div>
 @endsection
