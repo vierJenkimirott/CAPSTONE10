@@ -1,6 +1,7 @@
 
 @extends('layouts.staff-main')
 
+
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/behavior.css') }}">
 @endsection
@@ -129,3 +130,4 @@
 </body>
 </html>  
 @endpush
+
