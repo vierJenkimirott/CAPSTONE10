@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\EducatorController;
+use App\Http\Controllers\StudentManualController;
 
 // =============================================
 // Default Route
@@ -50,7 +51,19 @@ Route::post('/staff-login', [LoginController::class, 'processLogin']);
 Route::get('/staff-dashboard', [EducatorController::class, 'dashboard'])->name('staff-dashboard');
 Route::post('/staff_logout', [LoginController::class, 'logout'])->name('logout');
 
+// Rewards Routes
+Route::get('/rewards', [RewardsController::class, 'index'])->name('rewards');
+Route::get('/rewards/add', [RewardsController::class, 'create'])->name('rewards.add');
+Route::get('/rewards/pending', [RewardsController::class, 'pending'])->name('rewards.pending');
+Route::post('/rewards', [RewardsController::class, 'store'])->name('rewards.store');
+Route::post('/rewards/generate-monthly-points', [RewardsController::class, 'generateMonthlyPoints'])->name('rewards.generate-monthly-points');
+Route::get('/rewards/{reward}/edit', [RewardsController::class, 'edit'])->name('rewards.edit');
+Route::put('/rewards/{reward}', [RewardsController::class, 'update'])->name('rewards.update');
+Route::delete('/rewards/{reward}', [RewardsController::class, 'destroy'])->name('rewards.destroy');
+
+
 // =============================================
+
 // Admin Routes
 // =============================================
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
@@ -64,12 +77,16 @@ Route::post('/create_user', [UserController::class, 'store'])->name('admin.creat
 // =============================================
 Route::get('/behavior', [BehaviorController::class, 'showBehavior'])->name('behavior');
 
+
+Route::get('/student-manual', [StudentManualController::class, 'index'])->name('student-manual');
+
 // =============================================
 // Student Manual Routes
 // =============================================
 Route::get('/student-manual', function () {
     return view('student-manual');
 })->name('student-manual');
+
 
 Route::get('/student-manual/general-behavior', function () {
     return view('student-manual.general-behavior');
@@ -95,11 +112,14 @@ Route::get('/student-manual/center-tasking', function () {
     return view('student-manual.center-tasking');
 })->name('student-manual.center-tasking');
 
+Route::get('/educator-violation', [App\Http\Controllers\EducatorController::class, 'showViolations'])->name('educator-violation');
+
 // =============================================
 // Educator Routes
 // =============================================
 // Violation Management
 Route::get('/educator-violation', [EducatorController::class, 'violations'])->name('educator-violation');
+
 Route::get('/educator_add_violation', function () {
     return view('educator.educator_add_violation');
 })->name('educator_add_violation');
@@ -125,6 +145,8 @@ Route::get('/educator/violation/{id}', [EducatorController::class, 'viewViolatio
 Route::get('/educator/violation/{id}/edit', [EducatorController::class, 'editViolation'])->name('educator_edit_violation');
 Route::put('/educator/violation/{id}', [EducatorController::class, 'updateViolation'])->name('educator_update_violation');
 
+
+
 // =============================================
 // Rewards Routes
 // =============================================
@@ -132,4 +154,5 @@ Route::get('/rewards', [RewardsController::class, 'index'])->name('rewards');
 Route::get('/rewards/add', [RewardsController::class, 'create'])->name('rewards.add');
 Route::get('/rewards/pending', [RewardsController::class, 'pending'])->name('rewards.pending');
 Route::post('/rewards', [RewardsController::class, 'store'])->name('rewards.store');
+
 

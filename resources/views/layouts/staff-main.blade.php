@@ -7,6 +7,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('css/staff-dashboard.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     @yield('css')
 </head>
 <body>
@@ -30,17 +33,17 @@
         <ul class="list-unstyled mb-0">
                 <li class="p-3 {{ request()->routeIs('staff-dashboard') ? 'active' : ''}}"><a href="{{ route('staff-dashboard') }}" class="text-decoration-none"><img src="{{asset('images/dashboard.png')}}" alt=""> Dashboard</a></li>
                 <li class="p-3 {{ request()->routeIs('educator-violation') ? 'active' : ''}}"><a href="{{ route('educator-violation') }}" class="text-decoration-none"><img src="{{ asset('images/warning (1).png') }}" alt=""> Violations</a></li>
-                <li class="p-3 {{ request()->routeIs('behavior') ? 'active' : '' }}"><a href="{{ route('behavior') }}" class="text-decoration-none"><img src="{{ asset('images/online-report.png') }}" alt=""> Behavior Monitoring</li>
-                <li class="p-3"><img src="{{ asset('images/giftbox.png') }}" alt=""> Reward System</a></li>
-                <li class="p-3 dropdown-btn"><a href="{{ route('student-manual')}}" class="text-decoration-none"><img src="{{ asset('images/manual.png') }}" alt="" style="height: 25px; width: 25px; margin-right: 10px;">Student Violation Manual</a></li>
-                <div class="dropdown-container">
+                <li class="p-3 {{ request()->routeIs('behavior') ? 'active' : '' }}"><a href="{{ route('behavior') }}" class="text-decoration-none"><img src="{{ asset('images/online-report.png') }}" alt=""> Behavior Monitoring</a></li>
+                <li class="p-3 {{ request()->routeIs('rewards') ? 'active' : '' }}"><a href="{{ route('rewards') }}" class="text-decoration-none"><img src="{{ asset('images/giftbox.png') }}" alt=""> Reward System</a></li>
+                <li class="p-3 {{ request()->routeIs('student-manual') ? 'active' : ''}}"><a href="{{ route('student-manual') }}" class="text-decoration-none"><img src="{{ asset('images/manual.png') }}" alt=""> Student Violation Manual</a></li>
+                <!-- <div class="dropdown-container">
                     <a href="page2.html">General Behavior</a>
                     <a href="page3.html">Schedules</a>
                     <a href="page4.html">Room Rules</a>
                     <a href="page5.html">Dress Code</a>
                     <a href="page6.html">Equipment</a>
                     <a href="page7.html">Center Tasking</a>
-                </div>
+                </div> -->
             </ul>
         </div>
         

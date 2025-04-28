@@ -4,6 +4,7 @@
     <!-- External CSS and Script Dependencies -->
     <link rel="stylesheet" href="{{ asset('css/educator/violation.css') }}">
     <script src="https://kit.fontawesome.com/4e45d9ad8d.js" crossorigin="anonymous"></script>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Custom Styles -->

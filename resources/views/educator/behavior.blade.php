@@ -1,13 +1,13 @@
 
 @extends('layouts.staff-main')
 
-@section('content')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/behavior.css') }}">
 @endsection
 
-<div class="container">
+@section('content')
+
         <div class="row g-3">
             <div class="col-md-6">
                 <div class="card">
@@ -46,7 +46,6 @@
                 </div>
             </div>
         </div>
-</div>
 @endsection
 
 @push('scripts')
@@ -127,10 +126,8 @@
             behaviorChart.update();
         });
     </script>
-
     <script src="scripts.js"></script>
 </body>
 </html>  
-
 @endpush
 
