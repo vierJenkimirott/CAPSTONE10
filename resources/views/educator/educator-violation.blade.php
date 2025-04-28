@@ -3,22 +3,6 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/educator/violation.css') }}">
     <script src="https://kit.fontawesome.com/4e45d9ad8d.js" crossorigin="anonymous"></script>
-    <style>
-        .action-icon {
-            color: #666;
-            margin: 0 5px;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .action-icon:hover {
-            color: #333;
-        }
-        
-        .action-icon i {
-            font-size: 1.1em;
-        }
-    </style>
 @endsection
 
 @section('content')

@@ -5,13 +5,26 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
+use App\Models\Notification;
 
 class StudentController extends Controller
 {
+    protected $unreadCount = 0;
+
     public function __construct()
     {
-        // Share unreadCount with all views
-        View::share('unreadCount', 0); // For now, we'll set a static count
+        try {
+            if (Auth::check()) {
+                $this->unreadCount = Notification::where('user_id', Auth::id())
+                    ->where('is_read', false)
+                    ->count();
+            }
+        } catch (\Exception $e) {
+            // If there's any error (like table doesn't exist), set count to 0
+            $this->unreadCount = 0;
+        }
+        
+        View::share('unreadCount', $this->unreadCount);
     }
 
     public function showLoginForm (){
@@ -73,8 +86,7 @@ class StudentController extends Controller
 
     public function redemption()
     {
-        // You can add logic to handle reward redemption here
+        // You can add logic to handle redemption here
         return view('student.student_redemption');
-
     }
 }

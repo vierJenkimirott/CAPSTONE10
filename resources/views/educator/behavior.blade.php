@@ -1,14 +1,12 @@
 
 @extends('layouts.staff-main')
 
-@section('content')
->>>>>>> 2549668442a0bcce2cfd0f89afbac988f1eb5a12:resources/views/educator/behavior.blade.php
-
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/behavior.css') }}">
 @endsection
 
-<div class="container">
+@section('content')
+
         <div class="row g-3">
             <div class="col-md-6">
                 <div class="card">
@@ -47,7 +45,6 @@
                 </div>
             </div>
         </div>
-</div>
 @endsection
 
 @push('scripts')
@@ -128,10 +125,7 @@
             behaviorChart.update();
         });
     </script>
-<<<<<<< HEAD:resources/views/behavior.blade.php
     <script src="scripts.js"></script>
 </body>
 </html>  
-=======
 @endpush
->>>>>>> 2549668442a0bcce2cfd0f89afbac988f1eb5a12:resources/views/educator/behavior.blade.php

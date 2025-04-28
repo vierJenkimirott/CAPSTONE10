@@ -3,7 +3,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -86,7 +86,7 @@ button{
     padding: 5px 0;
     color: white;
     text-decoration: none;
-    margin-left: 20px;
+    margin-left: 10px;
     transition: all 0.3s ease;
     position: relative;
     padding-bottom: 5px;
