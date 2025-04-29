@@ -11,13 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('severities', function (Blueprint $table) {
-            $table->id();
-            $table->string('severity_name', 50);
-            $table->text('description')->nullable();
-           
-
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('role')->default('student');  // Add 'role' column with default value
         });
     }
 
@@ -26,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('severities');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('role');  // Remove 'role' column
+        });
     }
-}; 
+};
